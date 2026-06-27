@@ -8,12 +8,10 @@ class ProductPage(BasePage):
         button.click()
 
     def get_product_name(self):
-        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        return product_name
+        return self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
 
     def get_product_price(self):
-        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        return product_price
+        return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
 
     def should_be_product_added_to_basket(self, product_name):
         success_message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
